@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   end
 
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
+
+  resources :parts  do
+    resources :transactions, only: [:new, :create]
+  end
+  resources :transactions, only: [:destroy]
 end
