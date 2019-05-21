@@ -1,6 +1,6 @@
 class PartsController < ApplicationController
   def index
-    @parts = Parts.all
+    @parts = Part.all
   end
 
   def show
@@ -37,5 +37,4 @@ class PartsController < ApplicationController
   def part_params
     params.require(:part).permit(:name, :description, :part_type_id, :picture_url, :sold, :user_id, :price)
   end
-
 end
