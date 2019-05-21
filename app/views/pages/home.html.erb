@@ -1,5 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1><%= current_user.first_name.capitalize %>'s parts</h1>
 
-<h1>HELLO USER</h1>
+  <ul class="list-group">
+    <% current_user.parts.each do |part| %>
+      <li class="list-group-item list-group-item-light">
+        <%= part.name  %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
 
