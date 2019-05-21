@@ -1,6 +1,6 @@
 class PartsController < ApplicationController
   def index
-    @parts = Parts.all
+    @parts = Part.all
   end
 
   def show
