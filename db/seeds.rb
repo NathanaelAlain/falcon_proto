@@ -1,23 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 puts "deleting the parts database..."
 Part.destroy_all
-=======
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-puts "deleting the parts database..."
-Parts.destroy_all
 
 
 puts "generate new parts....."
@@ -70,7 +52,5 @@ price: "400"
 ]
 
 Part.create!(parts_attributes)
-=======
-Part.create!(part_attributes)
 puts 'Finished!'
 
