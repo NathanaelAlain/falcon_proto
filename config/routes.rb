@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: "pages#dashboard"
   end
 
+  #Declared two actions of pages
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
+  get '/profile', to: 'pages#profile'
 
   resources :parts do
     resources :transactions, only: [:new, :create]
