@@ -6,8 +6,13 @@ class PartsController < ApplicationController
   def show
     @part = Part.find(params[:id])
     @transaction = Transaction.new
+    authorize @part
     # @user = User.find(params[:user_id])
     # @part.user = @user
+  end
+
+  def index
+    @parts = policy_scope(Part).order(created_at: :desc)
   end
 
   def new
@@ -37,4 +42,6 @@ class PartsController < ApplicationController
   def part_params
     params.require(:part).permit(:name, :description, :part_type_id, :picture_url, :sold, :user_id, :price)
   end
+
+
 end
