@@ -7,7 +7,8 @@ class PartsController < ApplicationController
     @part = Part.find(params[:id])
     @transaction = Transaction.new
     authorize @part
-    # @user = User.find(params[:user_id])
+    user_id = @part.user_id
+    @user = User.find(user_id)
     # @part.user = @user
   end
 
