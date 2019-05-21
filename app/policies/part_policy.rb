@@ -3,18 +3,18 @@ class PartPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def show?
-      true
-    end
+  def create?
+    true
+  end
 
-    def update?
-      true
-    end
+  def show?
+    true
+  end
 
-    def index?
-      true
-    end
 
+  def index?
+    true
   end
 end
