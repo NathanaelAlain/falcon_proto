@@ -8,7 +8,7 @@
 
 
 puts "deleting the parts database..."
-Parts.destroy_all
+Part.destroy_all
 
 
 puts "generate new parts....."
@@ -60,6 +60,6 @@ price: "400"
 }
 ]
 
-Part.create!(part_attributes)
+Part.create!(parts_attributes)
 puts 'Finished!'
 
