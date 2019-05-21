@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
 
-  resources :parts  do
+  resources :parts do
     resources :transactions, only: [:new, :create]
   end
   resources :transactions, only: [:destroy]
