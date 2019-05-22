@@ -1,0 +1,29 @@
+<h1>Profile page</h1>
+
+<div class="container">
+
+  <ul>
+    <li>
+      Prifile Image:
+      <br>
+      <%= cl_image_tag current_user.photo%>
+    </li>
+    <li>
+      First name: <%= current_user.first_name %>
+
+    </li>
+    <li>
+      Last name: <%= current_user.last_name %>
+    </li>
+    <li>
+      Email: <%= current_user.email %>
+    </li>
+    <li>
+      You are a seller: <%= current_user.seller %>
+    </li>
+    <li>
+      Your address: <%= current_user.address %>
+    </li>
+
+  </ul>
+</div>
