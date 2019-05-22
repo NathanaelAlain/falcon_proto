@@ -1,5 +1,5 @@
 class PartsController < ApplicationController
-  before_action :set_part, only: [:show, :edit, :update]
+  before_action :set_part, only: [:show, :edit, :update, :destroy]
 
   def show
     @trade = Trade.new
@@ -36,6 +36,11 @@ class PartsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @part.destroy
+    redirect_to parts_path
   end
 
   private
