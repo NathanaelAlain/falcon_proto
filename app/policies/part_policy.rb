@@ -7,11 +7,8 @@ class PartPolicy < ApplicationPolicy
 
   def create?
     # the user can only create a part if he is a seller.
-    if record.user.seller == true
-      true
-    else
-      raise Pundit::NotAuthorizedError, "You are not allowed to create a new part. First you need to register as a Seller."
-    end
+    user.seller == true
+
   end
 
   def show?
@@ -24,15 +21,11 @@ class PartPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    user.seller == true
   end
 
   def edit?
-    if record.user_id == user.id
-      true
-    else
-      raise Pundit::NotAuthorizedError, "You are not the owner of the part so you can't update the part"
-    end
+    record.user_id == user.id
   end
 
   def update?
