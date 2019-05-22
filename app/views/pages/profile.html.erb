@@ -1,29 +1,38 @@
-<h1>Profile page</h1>
-
 <div class="container">
 
-  <ul>
-    <li>
-      Prifile Image:
-      <br>
-      <%= cl_image_tag current_user.photo%>
-    </li>
-    <li>
-      First name: <%= current_user.first_name %>
+  <h1 class="profile-header">Profile:</h1>
 
-    </li>
-    <li>
-      Last name: <%= current_user.last_name %>
-    </li>
-    <li>
-      Email: <%= current_user.email %>
-    </li>
-    <li>
-      You are a seller: <%= current_user.seller %>
-    </li>
-    <li>
-      Your address: <%= current_user.address %>
-    </li>
+  <div class="grid">
 
-  </ul>
+    <div class="user-picture">
+      <div>
+        <%= cl_image_tag current_user.photo, class: "avatar-huge"%>
+      </div>
+    </div>
+
+    <div class="user-info">
+      <div>
+        <p><strong>First name: </strong><%= current_user.first_name %></p>
+      </div>
+
+      <div>
+        <p><strong>Last name: </strong></strong><%= current_user.last_name %></p>
+      </div>
+
+      <div>
+        <p><strong>Seller: </strong><%= current_user.seller %></p>
+      </div>
+
+      <div>
+        <p><strong>Address: </strong><%= current_user.address %></p>
+      </div>
+
+      <div>
+        <%= link_to "Edit profile", edit_user_registration_path, class: "btn" %>
+      </div>
+    </div>
+
+  </div>
+
 </div>
+
