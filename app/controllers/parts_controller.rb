@@ -18,7 +18,7 @@ class PartsController < ApplicationController
   end
 
   def update
-    if @part.update(part_parms)
+    if @part.update(part_params)
       redirect_to part_path(@part)
     else
       render :new
@@ -26,13 +26,6 @@ class PartsController < ApplicationController
   end
 
   def edit
-  end
-
-  def form_sold
-
-  end
-
-  def sold?
   end
 
   def create

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
   get '/profile', to: 'pages#profile'
 
+  get 'parts/:id/edit/sold', to: 'parts#form_sold', as: :sold
+
   resources :parts do
     resources :transactions, only: [:new, :create]
   end
