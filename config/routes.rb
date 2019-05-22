@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'pages#profile'
   
   resources :parts do
-    resources :transactions, only: [:new, :create]
+    resources :trades, only: [:new, :create]
   end
-  resources :transactions, only: [:destroy]
+  resources :trades, only: [:destroy]
 end

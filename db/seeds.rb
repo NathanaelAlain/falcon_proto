@@ -1,5 +1,5 @@
-puts "deleting the transaction of the database..."
-Transaction.destroy_all
+puts "deleting the trades of the database..."
+Trade.destroy_all
 
 puts "deleting the parts of the database..."
 Part.destroy_all
@@ -165,8 +165,8 @@ parts_attributes.each do |part_info|
 end
 # Part.create!(parts_attributes)
 
-puts "generate new transaction....."
-transactions_attributes = [
+puts "generate new trades....."
+trades_attributes = [
 {
 user_id: User.first.id,
 part_id: Part.second.id,
@@ -193,7 +193,7 @@ part_id: Part.last.id,
 date: "5.6.2019"
 }
 ]
-Transaction.create!(transactions_attributes)
+Trade.create!(trades_attributes)
 
 
 puts 'seed finish'
