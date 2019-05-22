@@ -11,6 +11,14 @@ class PartPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    true
+  end
+
+  def update?
+    true
+  end
+
   def show?
     # the user can only see his own parts and not the parts of someone else
     true
