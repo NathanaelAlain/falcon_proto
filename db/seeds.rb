@@ -16,8 +16,9 @@ email: "paul.strunz@test.com",
 seller: true,
 password: "123456",
 address: "checkpoint charlie, berlin, germany",
-photo: "https://randomuser.me/api/portraits/men/5.jpg"
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
 },
+
 {
 first_name: "Jan",
 last_name: "Pannini",
@@ -25,7 +26,7 @@ email: "jan.pannini@test.com",
 seller: true,
 password: "123456",
 address: "champ elyse, paris, france",
-photo: "https://randomuser.me/api/portraits/men/4.jpg"
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user4_vrifui.jpg"
 },
 {
 first_name: "Mick",
@@ -34,7 +35,7 @@ email: "mick.thomson@test.com",
 seller: true,
 password: "123456",
 address: "time square, london, england",
-photo: "https://randomuser.me/api/portraits/men/3.jpg"
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user2_nhf0zt.jpg"
 },
 {
 first_name: "Juerg",
@@ -43,7 +44,7 @@ email: "juerg.schuplli@test.com",
 seller: true,
 password: "123456",
 address: "zurich, swisstzerland",
-photo: "https://randomuser.me/api/portraits/men/2.jpg"
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/user3_vq26fx.jpg"
 },
 {
 first_name: "Chan",
@@ -52,10 +53,16 @@ email: "chang.peng@test.com",
 seller: false,
 password: "123456",
 address: " shangai, china",
-photo: "https://randomuser.me/api/portraits/men/1.jpg"
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/user5_by1lv5.jpg"
 }
 ]
-User.create!(users_attributes)
+# User.create!(users_attributes)
+
+users_attributes.each do |user_info|
+  u = User.new(user_info)
+  u.remote_photo_url = user_info[:photo]
+  u.save
+end
 puts "users are created"
 
 puts "generate new parts....."
@@ -64,7 +71,7 @@ parts_attributes = [
 name: "Front light right",
 description: "Golf 7, 2017, like new, small scratches on the glass",
 part_type_id: "X",
-photo: "https://www.carpartstuning.com/tuning/front-bumper-suitable-for-vw-golf-vii-7_5990750_6017962.jpg",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/front-bumper.png",
 sold: false,
 user_id: User.all.sample.id,
 price: "100"
@@ -73,7 +80,7 @@ price: "100"
 name: "Rear light right",
 description: "Golf 7, 2017, like new, small scratches on the glass",
 part_type_id: "Y",
-photo: "https://i.ebayimg.com/images/g/Y-YAAOSwnWpcC1rJ/s-l1600.jpg",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/s-l1600_un1znb.jpg",
 sold: false,
 user_id: User.all.sample.id,
 price: "200"
@@ -82,7 +89,7 @@ price: "200"
 name: "ACC",
 description: "Golf 6, 2015, good contition, works properly",
 part_type_id: "5Q0907561",
-photo: "https://i.ebayimg.com/images/g/rNwAAOxydgZTKYhL/s-l1600.jpg",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/s-l1600_1_bcwrur.jpg",
 sold: true,
 user_id: User.all.sample.id,
 price: "300"
@@ -91,7 +98,7 @@ price: "300"
 name: "Mirror R",
 description: "Golf 6, 2015, good contition, works properly",
 part_type_id: "5Q0907561",
-photo: "https://i.ebayimg.com/images/g/IDEAAOSw5Xpb7F1Y/s-l1600.jpg",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/s-l1600_2_pmqf2o.jpg",
 sold: true,
 user_id: User.all.sample.id,
 price: "400"
@@ -100,7 +107,7 @@ price: "400"
 name: "360 camera view",
 description: "BMW 320, 2018, good contition, works properly",
 part_type_id: "5G9947291B",
-photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA7Wy3V3oIm1alyG2TjBMxBKEoeE84afEvB9gSlgmdSgHmnWYr",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/images_c7eymb.jpg",
 sold: false,
 user_id: User.all.sample.id,
 price: "500"
@@ -109,7 +116,7 @@ price: "500"
 name: "LED Pannel inside",
 description: "Golf 7, 2017, good contition, works properly",
 part_type_id: "5G9947291B",
-photo: "https://i.ebayimg.com/images/g/mQIAAOSwo1lcQZgY/s-l1600.jpg",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/s-l1600_3_mz67ik.jpg",
 sold: false,
 user_id: User.all.sample.id,
 price: "600"
@@ -118,7 +125,7 @@ price: "600"
 name: "Onborad ECU",
 description: "BMW 320, 2018, contition not tested, not tested",
 part_type_id: "5G9947291B",
-photo: "https://www.picclickimg.com/d/l400/pict/173589488959_/BMW-Classic-M5-E34-ABS-Steuerger%C3%A4t-Antiblockiersystem-Bremsen.jpg",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/image_300583_big_aqa5ma.jpg",
 sold: true,
 user_id: User.all.sample.id,
 price: "1500"
@@ -127,7 +134,7 @@ price: "1500"
 name: "Motor management",
 description: "BMW X3, 2016, contition not tested, not tested",
 part_type_id: "5G9947291B",
-photo: "https://static.schmiedmann.dk/ProductPictures/image_300583_big.jpg",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/MotorManagement.jpg",
 sold: false,
 user_id: User.all.sample.id,
 price: "1000"
@@ -136,7 +143,7 @@ price: "1000"
 name: "Head Lamp Front Right",
 description: "530, 2013, normal contition, works",
 part_type_id: "5G9947291B",
-photo: "https://static.schmiedmann.dk/ProductPictures/image_296363_big.jpg",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
 user_id: User.all.sample.id,
 price: "700"
@@ -145,13 +152,18 @@ price: "700"
 name: "Laser distance detection",
 description: "Audi A8, 2015, good contition, works properly",
 part_type_id: "5G9947291B",
-photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbJqyQGBuUfwpGMBcrHZVQSNBuRRw_vmpmIOgxXSjKdEWKmEDJ7w",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529725/images_1_hckujw.jpg",
 sold: false,
 user_id: User.all.sample.id,
 price: "2400"
 }
 ]
-Part.create!(parts_attributes)
+parts_attributes.each do |part_info|
+  i = Part.new(part_info)
+  i.remote_photo_url = part_info[:photo]
+  i.save
+end
+# Part.create!(parts_attributes)
 
 puts "generate new transaction....."
 transactions_attributes = [
