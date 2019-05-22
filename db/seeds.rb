@@ -1,5 +1,5 @@
-puts "deleting the transaction of the database..."
-Transaction.destroy_all
+puts "deleting the trades of the database..."
+Trade.destroy_all
 
 puts "deleting the parts of the database..."
 Part.destroy_all
