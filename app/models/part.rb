@@ -4,4 +4,6 @@ class Part < ApplicationRecord
   validates :user_id, presence: true
   validates :name, presence: true
   validates :price, presence: true
+
+  mount_uploader :photo, PhotoUploader
 end

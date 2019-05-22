@@ -1,0 +1,17 @@
+<%= simple_form_for @part do |f| -%>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :part_type_id %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :sold, as: :hidden %>
+    <%= f.input :user_id, input_html: { value: current_user.id }, as: :hidden %>
+    <%= f.input :price %>
+    <%= f.button :submit %>
+  </div>
+
+<% end -%>

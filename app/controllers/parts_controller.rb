@@ -1,12 +1,8 @@
 class PartsController < ApplicationController
-  def index
-    @parts = Part.all
-  end
+  before_action :set_part, only: [:show, :edit, :update]
 
   def show
-    @part = Part.find(params[:id])
     @transaction = Transaction.new
-    authorize @part
     user_id = @part.user_id
     @user = User.find(user_id)
     # @part.user = @user
@@ -18,10 +14,10 @@ class PartsController < ApplicationController
 
   def new
     @part = Part.new
+    authorize @part
   end
 
   def update
-    @part = Part.find(params[:id])
     if @part.update(part_parms)
       redirect_to part_path(@part)
     else
@@ -31,8 +27,9 @@ class PartsController < ApplicationController
 
   def create
     @part = Part.new(part_params)
+    authorize @part
     if @part.save
-      redirect_to part_path(@part)
+      redirect_to part_path(@part), notice: 'Part was succesfully created'
     else
       render :new
     end
@@ -41,8 +38,12 @@ class PartsController < ApplicationController
   private
 
   def part_params
-    params.require(:part).permit(:name, :description, :part_type_id, :picture_url, :sold, :user_id, :price)
+    params.require(:part).permit(:name, :description, :part_type_id, :photo, :sold, :user_id, :price)
   end
 
+  def set_part
+    @part = Part.find(params[:id])
+    authorize @part
 
+  end
 end
