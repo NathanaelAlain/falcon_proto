@@ -156,28 +156,28 @@ Part.create!(parts_attributes)
 puts "generate new transaction....."
 transactions_attributes = [
 {
-user_id: User.all.sample.id,
-part_id: Part.all.sample.id,
+user_id: User.first.id,
+part_id: Part.second.id,
 date: "1.2.2019"
 },
 {
-user_id: User.all.sample.id,
-part_id: Part.all.sample.id,
+user_id: User.first.id,
+part_id: Part.third.id,
 date: "2.3.2019"
 },
 {
-user_id: User.all.sample.id,
-part_id: Part.all.sample.id,
+user_id: User.second.id,
+part_id: Part.fourth.id,
 date: "3.4.2019"
 },
 {
-user_id: User.all.sample.id,
-part_id: Part.all.sample.id,
+user_id: User.third.id,
+part_id: Part.fifth.id,
 date: "4.5.2019"
 },
 {
-user_id: User.all.sample.id,
-part_id: Part.all.sample.id,
+user_id: User.fourth.id,
+part_id: Part.last.id,
 date: "5.6.2019"
 }
 ]
