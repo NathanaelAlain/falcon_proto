@@ -3,7 +3,7 @@
   <% @parts.each do |part| %>
 
   <div class="card-trip">
-    <%= image_tag(part.picture_url) %>
+<%= cl_image_tag part.photo, crop: :fill %>
 
       <div class="card-trip-infos">
         <div>

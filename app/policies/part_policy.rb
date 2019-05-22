@@ -7,7 +7,8 @@ class PartPolicy < ApplicationPolicy
 
   def create?
     # the user can only create a part if he is a seller.
-    record.user.seller == true
+    # record.user.seller == true
+    true
   end
 
   def show?
@@ -16,6 +17,10 @@ class PartPolicy < ApplicationPolicy
   end
 
   def index?
+    true
+  end
+
+  def new?
     true
   end
 end
