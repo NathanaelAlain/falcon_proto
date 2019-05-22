@@ -18,11 +18,14 @@ class PartsController < ApplicationController
   end
 
   def update
-    if @part.update(part_parms)
+    if @part.update(part_params)
       redirect_to part_path(@part)
     else
-      render :new
+      render :edit
     end
+  end
+
+  def edit
   end
 
   def create
