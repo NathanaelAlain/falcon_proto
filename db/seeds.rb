@@ -118,7 +118,7 @@ price: "600"
 name: "Onborad ECU",
 description: "BMW 320, 2018, contition not tested, not tested",
 part_type_id: "5G9947291B",
-picture_url: "https://www.picclickimg.com/d/l400/pict/173589488959_/BMW-Classic-M5-E34-ABS-Steuerger%C3%A4t-Antiblockiersystem-Bremsen.jpg",
+photo: "https://www.picclickimg.com/d/l400/pict/173589488959_/BMW-Classic-M5-E34-ABS-Steuerger%C3%A4t-Antiblockiersystem-Bremsen.jpg",
 sold: true,
 user_id: User.all.sample.id,
 price: "1500"
@@ -127,7 +127,7 @@ price: "1500"
 name: "Motor management",
 description: "BMW X3, 2016, contition not tested, not tested",
 part_type_id: "5G9947291B",
-picture_url: "https://static.schmiedmann.dk/ProductPictures/image_300583_big.jpg",
+photo: "https://static.schmiedmann.dk/ProductPictures/image_300583_big.jpg",
 sold: false,
 user_id: User.all.sample.id,
 price: "1000"
@@ -136,7 +136,7 @@ price: "1000"
 name: "Head Lamp Front Right",
 description: "530, 2013, normal contition, works",
 part_type_id: "5G9947291B",
-picture_url: "https://static.schmiedmann.dk/ProductPictures/image_296363_big.jpg",
+photo: "https://static.schmiedmann.dk/ProductPictures/image_296363_big.jpg",
 sold: true,
 user_id: User.all.sample.id,
 price: "700"
@@ -145,7 +145,7 @@ price: "700"
 name: "Laser distance detection",
 description: "Audi A8, 2015, good contition, works properly",
 part_type_id: "5G9947291B",
-picture_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbJqyQGBuUfwpGMBcrHZVQSNBuRRw_vmpmIOgxXSjKdEWKmEDJ7w",
+photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbJqyQGBuUfwpGMBcrHZVQSNBuRRw_vmpmIOgxXSjKdEWKmEDJ7w",
 sold: false,
 user_id: User.all.sample.id,
 price: "2400"
@@ -156,28 +156,28 @@ Part.create!(parts_attributes)
 puts "generate new transaction....."
 transactions_attributes = [
 {
-user_id: User.all.sample.id,
-part_id: Part.all.sample.id,
+user_id: User.first.id,
+part_id: Part.second.id,
 date: "1.2.2019"
 },
 {
-user_id: User.all.sample.id,
-part_id: Part.all.sample.id,
+user_id: User.first.id,
+part_id: Part.third.id,
 date: "2.3.2019"
 },
 {
-user_id: User.all.sample.id,
-part_id: Part.all.sample.id,
+user_id: User.second.id,
+part_id: Part.fourth.id,
 date: "3.4.2019"
 },
 {
-user_id: User.all.sample.id,
-part_id: Part.all.sample.id,
+user_id: User.third.id,
+part_id: Part.fifth.id,
 date: "4.5.2019"
 },
 {
-user_id: User.all.sample.id,
-part_id: Part.all.sample.id,
+user_id: User.fourth.id,
+part_id: Part.last.id,
 date: "5.6.2019"
 }
 ]
