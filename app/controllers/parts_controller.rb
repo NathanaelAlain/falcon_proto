@@ -25,6 +25,16 @@ class PartsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def form_sold
+
+  end
+
+  def sold?
+  end
+
   def create
     @part = Part.new(part_params)
     authorize @part
