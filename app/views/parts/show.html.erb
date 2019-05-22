@@ -50,6 +50,16 @@
     <div class="col text-bottom">
       <button type="button" class="btn btn-outline-primary p-2"> <%= link_to 'All Parts', parts_path(@part) %></button>
     </div>
+    <% if current_user.id == @part.user_id %>
+    <div class="col text-bottom">
+      <button>
+        <%= link_to "edit part", edit_part_path %>
+      </button>
+      <button>
+        <%= link_to "delete part", part_path(@part), data: { confirm: "are you sure?" }, method: :delete  %>
+      </button>
+    </div>
+    <% end %>
   </div>
 </div>
 
