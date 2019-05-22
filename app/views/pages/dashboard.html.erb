@@ -9,18 +9,22 @@
 
     </div>
 
-    <div class="card-dashboard">
-
-      <div class="card-dashboard-info">
-        <h2><%= link_to "Sell a part", new_part_path %></h2>
+    <% if current_user.seller == true %>
+      <div class="card-dashboard">
+        <div class="card-dashboard-info">
+          <h2>
+            <%= link_to "Sell a part", new_part_path %>
+          </h2>
+        </div>
       </div>
-
-    </div>
+    <% end %>
 
     <div class="card-dashboard">
 
       <div class="card-dashboard-info">
-         <h2><%= link_to "Trade history" %></h2>
+          <h2>
+            <%= link_to "Trade history" %>
+          </h2>
       </div>
 
     </div>
