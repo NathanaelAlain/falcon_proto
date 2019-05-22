@@ -154,7 +154,7 @@ price: "2400"
 Part.create!(parts_attributes)
 
 puts "generate new transaction....."
-transactions_attributes = [
+trades_attributes = [
 {
 user_id: User.first.id,
 part_id: Part.second.id,
@@ -181,7 +181,7 @@ part_id: Part.last.id,
 date: "5.6.2019"
 }
 ]
-Transaction.create!(transactions_attributes)
+Trade.create!(trades_attributes)
 
 
 puts 'seed finish'
