@@ -153,7 +153,7 @@ price: "2400"
 ]
 Part.create!(parts_attributes)
 
-puts "generate new transaction....."
+puts "generate new trades....."
 trades_attributes = [
 {
 user_id: User.first.id,
