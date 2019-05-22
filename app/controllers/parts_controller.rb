@@ -6,6 +6,7 @@ class PartsController < ApplicationController
     user_id = @part.user_id
     @user = User.find(user_id)
     # @part.user = @user
+
   end
 
   def index
