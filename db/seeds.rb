@@ -185,4 +185,3 @@ Transaction.create!(transactions_attributes)
 
 
 puts 'seed finish'
-
