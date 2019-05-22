@@ -1,7 +1,11 @@
 class TradePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      Trade.where(user: user)
     end
+  end
+
+  def history
+    true
   end
 end
