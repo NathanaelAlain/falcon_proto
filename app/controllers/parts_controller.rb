@@ -6,11 +6,16 @@ class PartsController < ApplicationController
     user_id = @part.user_id
     @user = User.find(user_id)
     # @part.user = @user
-
   end
 
   def index
     @parts = policy_scope(Part).order(created_at: :desc)
+    if params[:query].present?
+      @parts = Part.global_search(params[:query])
+
+    else
+      @parts = policy_scope(Part).order(created_at: :desc)
+    end
   end
 
   def new
