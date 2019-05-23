@@ -3,20 +3,20 @@
     <thead class="thead-light">
       <tr>
         <th scope="col"></th>
-        <th scope="col">Parts to sell</th>
+        <th scope="col">Parts Sold</th>
       </tr>
     </thead>
     <tbody>
-      <%# parts_to_sell = [] %>
       <% i = 0 %>
       <% @current_user.parts.each do |part| %>
-      <tr>
-          <% i = i + 1 %>
-          <%# parts_to_sell << part  %>
-        <th scope="row"><%= i %></th>
-        <td><%= part.name %></td>
-      </tr>
-        <% end %>
+      <% if part.sold %>
+        <tr>
+            <% i = i + 1 %>
+          <th scope="row"><%= i %></th>
+          <td><%= part.name %></td>
+        </tr>
+          <% end %>
+      <% end %>
 
     </tbody>
   </table>
@@ -30,7 +30,6 @@
       </tr>
     </thead>
     <tbody>
-      <%# parts_to_buy = [] %>
       <% j = 0 %>
       <% @current_user.trades.each do |trade| %>
       <tr>
