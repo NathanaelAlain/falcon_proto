@@ -1,12 +1,11 @@
 class PartsController < ApplicationController
-  before_action :set_part, only: [:show, :edit, :update, :destroy]
+  before_action :set_part, only: [:show, :edit, :update, :destroy, :new_checkout, :checkout]
 
   def show
     @trade = Trade.new
     user_id = @part.user_id
     @user = User.find(user_id)
     # @part.user = @user
-
   end
 
   def index
@@ -44,6 +43,17 @@ class PartsController < ApplicationController
     redirect_to parts_path
   end
 
+  def checkout
+    if @part.update(part_params)
+      redirect_to parts_path, notice: 'Part was succesfully bought and will be sent asap to your adress with a nice bill.'
+    else
+      render :new_checkout
+    end
+  end
+
+  def new_checkout
+  end
+
   private
 
   def part_params
@@ -53,6 +63,5 @@ class PartsController < ApplicationController
   def set_part
     @part = Part.find(params[:id])
     authorize @part
-
   end
 end
