@@ -1,3 +1,4 @@
+
 <div style="width: 90%">
   <div class="container mt-2 fixed-top" style="width: 50%">
     <%= form_tag parts_path, method: :get do %>
@@ -30,4 +31,30 @@
       <% end %>
     </div>
   </div>
+
+<div class="container mt-2 sticky-top">
+    <%= simple_form_for :search, url: parts_path, method: :get do |f| %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "search a part" %>
+
+      <button name="button" type="submit" class="btn btn-flat btn-block">
+        <i class="fas fa-search"></i> Search
+      </button>
+  <% end %>
+</div>
+
+<div class="grid">
+  <% @parts.each do |part| %>
+    <% if part.sold == false %>
+      <div class="card-trip">
+      <%= cl_image_tag part.photo, crop: :fill %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= link_to part.name, part_path(part) %></h2>
+            <p><%= part.description %> </p>
+          </div>
+          <h2 class="card-trip-pricing">€ <%= part.price %></h2>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
