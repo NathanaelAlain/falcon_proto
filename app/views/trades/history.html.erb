@@ -7,9 +7,8 @@
   <ul class="list-group">
     <% current_user.trades.each do |trade| %>
       <li class="list-group-item list-group-item-light">
-        <%= trade.user.first_name  %> bought from <% @things.each do |thing| %>
+        <%= trade.user.first_name %>
 
-        <% end %>
       </li
     <% end %>
   </ul>
