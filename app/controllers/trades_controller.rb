@@ -2,9 +2,6 @@ class TradesController < ApplicationController
 
   def history
     @trades = policy_scope(Trade)
-    # raise
-    # user_id = @trade.user_id
-    # @user = Trade.find(user_id)
   end
 
   def new
