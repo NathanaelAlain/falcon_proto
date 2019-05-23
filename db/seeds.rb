@@ -37,9 +37,9 @@ address: "checkpoint charlie, berlin, germany",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
 },
 {
-first_name: "Marteen",
+first_name: "Maarten",
 last_name: "Starr",
-email: "marteen@test.com",
+email: "maarten@test.com",
 seller: true,
 password: "123456",
 address: "checkpoint charlie, berlin, germany",
@@ -58,6 +58,15 @@ photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh
 first_name: "Romeo",
 last_name: "Starr",
 email: "romeo@test.com",
+seller: true,
+password: "123456",
+address: "Penny Lane, Liverpool, UK",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
+},
+{
+first_name: "Admin",
+last_name: "Admin",
+email: "admin@admin.com",
 seller: true,
 password: "123456",
 address: "Penny Lane, Liverpool, UK",
@@ -180,7 +189,7 @@ date: "1.2.2019"
 {
 user_id: User.first.id,
 part_id: Part.third.id,
-date: "2.3.2019"
+date: "2.3.2019"sers/sign_out
 },
 {
 user_id: User.second.id,
