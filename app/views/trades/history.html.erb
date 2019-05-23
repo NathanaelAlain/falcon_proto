@@ -1,17 +1,48 @@
-
-
-
 <div class="container">
-  <h1><%= current_user.first_name.capitalize %>'s parts</h1>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Parts to sell</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%# parts_to_sell = [] %>
+      <% i = 0 %>
+      <% @current_user.parts.each do |part| %>
+      <tr>
+          <% i = i + 1 %>
+          <%# parts_to_sell << part  %>
+        <th scope="row"><%= i %></th>
+        <td><%= part.name %></td>
+      </tr>
+        <% end %>
 
-  <ul class="list-group">
-    <% current_user.trades.each do |trade| %>
-      <li class="list-group-item list-group-item-light">
-        <%= trade.user.first_name %>
+    </tbody>
+  </table>
 
-      </li
-    <% end %>
-  </ul>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Parts purchased</th>
+        <th colspan="2" scope="col">Bought from</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%# parts_to_buy = [] %>
+      <% j = 0 %>
+      <% @current_user.trades.each do |trade| %>
+      <tr>
+        <% j = j + 1 %>
+        <th scope="row"><%= j %></th>
+        <td><%= Part.find(trade.part_id).name %></td>
+          <td><%= User.find(Part.find(trade.part_id).user_id).first_name %></td>
+          <td><%= User.find(Part.find(trade.part_id).user_id).last_name %></td>
+      </tr>
+      <% end %>  %>
+
+    </tbody>
+  </table>
 </div>
-
 

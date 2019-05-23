@@ -1,6 +1,6 @@
 class PartsController < ApplicationController
   before_action :set_part, only: [:show, :edit, :update]
-
+#
   def show
     @trade = Trade.new
     user_id = @part.user_id
