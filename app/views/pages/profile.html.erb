@@ -6,7 +6,11 @@
 
     <div class="user-picture">
       <div>
-        <%= cl_image_tag current_user.photo, class: "avatar-huge"%>
+        <% if current_user.photo? %>
+          <%= cl_image_tag current_user.photo, class: "avatar-huge"%>
+        <% else %>
+          <%= cl_image_tag "user_nixstg", class: "avatar-huge"%>
+        <% end %>
       </div>
     </div>
 
