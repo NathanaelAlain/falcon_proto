@@ -1,4 +1,5 @@
-<h2 class="welcome">Welcome, <%= current_user.first_name %> <%= current_user.last_name %> - <%= current_user.address %> </h1>
+<div class="container">
+  <h2 class="welcome">Welcome, <%= current_user.first_name %> <%= current_user.last_name %> - <%= current_user.address %> </h1>
 
   <div class="grid">
     <div class="card-dashboard">
@@ -9,13 +10,15 @@
 
     </div>
 
-    <div class="card-dashboard">
-
-      <div class="card-dashboard-info">
-        <h2><%= link_to "Sell a part", new_part_path %></h2>
+    <% if current_user.seller == true %>
+      <div class="card-dashboard">
+        <div class="card-dashboard-info">
+          <h2>
+            <%= link_to "Sell a part", new_part_path %>
+          </h2>
+        </div>
       </div>
-
-    </div>
+    <% end %>
 
     <div class="card-dashboard">
 
@@ -25,3 +28,4 @@
 
     </div>
   </div>
+</div>
