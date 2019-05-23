@@ -189,7 +189,7 @@ date: "1.2.2019"
 {
 user_id: User.first.id,
 part_id: Part.third.id,
-date: "2.3.2019"sers/sign_out
+date: "2.3.2019"
 },
 {
 user_id: User.second.id,
