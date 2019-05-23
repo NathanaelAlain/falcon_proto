@@ -34,4 +34,12 @@ class PartPolicy < ApplicationPolicy
   def destroy?
     record.user_id == user.id
   end
+
+  def checkout?
+    true
+  end
+
+  def new_checkout?
+    true
+  end
 end

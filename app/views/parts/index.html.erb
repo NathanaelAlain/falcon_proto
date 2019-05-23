@@ -9,18 +9,19 @@
 
 </div>
 
-
 <div class="grid">
   <% @parts.each do |part| %>
-    <div class="card-trip">
-    <%= cl_image_tag part.photo, crop: :fill %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= link_to part.name, part_path(part) %></h2>
-          <p><%= part.description %> </p>
+    <% if part.sold == false %>
+      <div class="card-trip">
+      <%= cl_image_tag part.photo, crop: :fill %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= link_to part.name, part_path(part) %></h2>
+            <p><%= part.description %> </p>
+          </div>
+          <h2 class="card-trip-pricing">€ <%= part.price %></h2>
         </div>
-        <h2 class="card-trip-pricing">€ <%= part.price %></h2>
       </div>
-    </div>
+    <% end %>
   <% end %>
 </div>
