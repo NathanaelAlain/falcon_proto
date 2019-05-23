@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :trades
 
   mount_uploader :photo, PhotoUploader
+
 end
