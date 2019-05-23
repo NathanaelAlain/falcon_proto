@@ -17,7 +17,7 @@
 
 <div class="grid">
   <% @parts.each do |part| %>
-    <% if part.sold == false %>
+    <% if part.trades.count == 0 %>
       <div class="card-trip">
       <%= cl_image_tag part.photo, crop: :fill %>
         <div class="card-trip-infos">
