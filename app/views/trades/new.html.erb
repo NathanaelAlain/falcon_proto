@@ -18,7 +18,7 @@
                       <div class="row">
                         <div class="col-md-5 product-name">
                           <div class="product-name">
-                            <h4><%= link_to @part.name, part_path  %></h4>
+                            <h4><%= link_to @part.name, part_path(@part)  %></h4>
                             <div class="product-info">
                               <p>
                                 Part id:<%= @part.part_type_id %>
@@ -59,12 +59,14 @@
                 <span class="text">Total</span>
                 <span class="price" id="total_price">€ <%=  @part.price %></span>
               </div>
-                <%= simple_form_for @part, :url => checkout_path(@part) do |f| -%>
+                <%= simple_form_for [@part, @trade] do |f| -%>
                   <%= f.error_notification %>
                   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
                   <!-- as: :hidden -->
-                  <%= f.input :sold, :input_html => { :checked => true } %>
-                  <%= f.button :submit, "Checkout" , class: "btn btn-primary btn-lg btn-block" %>
+                  <%= f.input :user_id, as: :hidden, :input_html => { :value => current_user.id } %>
+                  <%= f.input :part_id, as: :hidden, :input_html => { :value => @part.id }  %>
+                  <%= f.input :date, as: :hidden, :input_html => { :value => DateTime.now.to_date }  %>
+                  <%= f.button :submit , class: "btn btn-primary btn-lg btn-block" %>
                 <% end -%>
             </div>
           </div>

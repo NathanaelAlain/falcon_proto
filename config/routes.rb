@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/parts/:id/buy', to: 'parts#new_checkout', as: :new_checkout
   patch '/parts/:id/buy', to: 'parts#checkout', as: :checkout
 
+
   resources :parts do
     resources :trades, only: [:new, :create]
   end
