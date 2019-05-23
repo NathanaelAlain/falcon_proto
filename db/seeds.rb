@@ -1,71 +1,77 @@
-puts "deleting the trades of the database..."
+puts "Deleting the trades of the database..."
 Trade.destroy_all
 
-puts "deleting the parts of the database..."
+puts "Deleting the parts of the database..."
 Part.destroy_all
 
-puts "deleting the users of the database..."
+puts "Deleting the users of the database..."
 User.destroy_all
 
-puts "generate new users....."
+puts "Generating new users....."
 users_attributes = [
 {
-first_name: "Paul",
-last_name: "Strunz",
-email: "paul.strunz@test.com",
+first_name: "Seller",
+last_name: "Test",
+email: "seller@test.com",
+seller: true,
+password: "123456",
+address: "Penny Lane, Liverpool, UK",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
+},
+{
+first_name: "Buyer",
+last_name: "Test",
+email: "buyer@test.com",
+seller: false,
+password: "123456",
+address: "Penny Lane, Liverpool, UK",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
+},
+{
+first_name: "Gael",
+last_name: "SpareParts",
+email: "gael@test.com",
 seller: true,
 password: "123456",
 address: "checkpoint charlie, berlin, germany",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
 },
-
 {
-first_name: "Jan",
-last_name: "Pannini",
-email: "jan.pannini@test.com",
+first_name: "Marteen",
+last_name: "Starr",
+email: "marteen@test.com",
 seller: true,
 password: "123456",
-address: "champ elyse, paris, france",
-photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user4_vrifui.jpg"
+address: "checkpoint charlie, berlin, germany",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
 },
 {
-first_name: "Mick",
-last_name: "Thomson",
-email: "mick.thomson@test.com",
+first_name: "Nathanael",
+last_name: "Starr",
+email: "nathanael@test.com",
 seller: true,
 password: "123456",
-address: "time square, london, england",
-photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user2_nhf0zt.jpg"
+address: "checkpoint charlie, berlin, germany",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
 },
 {
-first_name: "Juerg",
-last_name: "Schuplli",
-email: "juerg.schuplli@test.com",
+first_name: "Romeo",
+last_name: "Starr",
+email: "romeo@test.com",
 seller: true,
 password: "123456",
-address: "zurich, swisstzerland",
-photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/user3_vq26fx.jpg"
+address: "Penny Lane, Liverpool, UK",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
 },
-{
-first_name: "Chan",
-last_name: "Peng",
-email: "chang.peng@test.com",
-seller: false,
-password: "123456",
-address: " shangai, china",
-photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/user5_by1lv5.jpg"
-}
 ]
-# User.create!(users_attributes)
 
 users_attributes.each do |user_info|
   u = User.new(user_info)
   u.remote_photo_url = user_info[:photo]
   u.save
 end
-puts "users are created"
 
-puts "generate new parts....."
+puts "Generating new parts....."
 parts_attributes = [
 {
 name: "Front light right",
@@ -156,16 +162,15 @@ photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529725/images_1_h
 sold: false,
 user_id: User.all.sample.id,
 price: "2400"
-}
+},
 ]
 parts_attributes.each do |part_info|
   i = Part.new(part_info)
   i.remote_photo_url = part_info[:photo]
   i.save
 end
-# Part.create!(parts_attributes)
 
-puts "generate new trades....."
+puts "Generating new trades....."
 trades_attributes = [
 {
 user_id: User.first.id,
@@ -191,9 +196,9 @@ date: "4.5.2019"
 user_id: User.fourth.id,
 part_id: Part.last.id,
 date: "5.6.2019"
-}
+},
 ]
 Trade.create!(trades_attributes)
 
 
-puts 'seed finish'
+puts 'Seed finished'
