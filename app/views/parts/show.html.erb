@@ -25,35 +25,35 @@
     </div>
  -->
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <%# @parts.each do |part| %>
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <%# end %>
-  </ol>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <%# @parts.each do |part| %>
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <%# end %>
+    </ol>
 
-  <!-- Wrapper for slides -->
+    <!-- Wrapper for slides -->
 
-      <div class="carousel-inner" role="listbox">
-       <div class="item active">
-        <%# @parts.each do |part| %>
-        <%= cl_image_tag @part.photo, crop: :fill %>
-        <%# end %>
+        <div class="carousel-inner" role="listbox">
+         <div class="item active">
+          <%# @parts.each do |part| %>
+          <%= cl_image_tag @part.photo, :width=>350, :fetch_format=>:auto, :crop=>"scale" %>
+          <%# end %>
+          </div>
         </div>
-      </div>
 
 
-<!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+  <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
 
 
@@ -71,20 +71,15 @@
       </ul>
     </div>
 
-    <div class="actions">
-      <div class="col text-top">
-        <%= link_to "Buy",  new_checkout_path, class: "btn btn-success btn-block" %>
-      </div>
-      <br>
+    <div class="col">
+      <%= link_to "Buy",  new_checkout_path, class: "btn btn-success btn-block" %>
+    <br>
       <% if current_user.id == @part.user_id %>
-        <div class="col ">
-          <%= link_to "edit part", edit_part_path, class: "btn btn-warning btn-block"  %>
-          <div>
-          <%= link_to "delete part", part_path(@part), data: { confirm: "are you sure?" }, method: :delete, class: "btn btn-danger btn-block"%>
-          </div>
-        </div>
+        <%= link_to "edit part", edit_part_path, class: "btn btn-warning btn-block"  %>
+        <%= link_to "delete part", part_path(@part), data: { confirm: "are you sure?" }, method: :delete, class: "btn btn-danger btn-block"%>
       <% end %>
       <br>
+      <%= link_to "all part", parts_path, class: "btn btn-primary btn-block"  %>
     </div>
   </div>
 </div>
