@@ -1,4 +1,9 @@
 class TradesController < ApplicationController
+
+  def history
+    @trades = policy_scope(Trade)
+  end
+
   def new
     @user = User.find(params[:user_id])
     @trade = Trade.new

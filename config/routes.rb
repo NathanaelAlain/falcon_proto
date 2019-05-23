@@ -16,4 +16,6 @@ Rails.application.routes.draw do
     resources :trades, only: [:new, :create]
   end
   resources :trades, only: [:destroy]
+
+  get '/user/history', to: 'trades#history', as: :history
 end
