@@ -1,47 +1,65 @@
 <div class="container">
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">Parts Sold</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% i = 0 %>
-      <% @current_user.parts.each do |part| %>
-      <% if part.sold %>
+  <div class="pt-3">
+    <h3 class="text-center">Sold Parts</h3>
+    <table class="table table-hover table-borderless">
+      <thead class="thead-light">
         <tr>
-            <% i = i + 1 %>
-          <th scope="row"><%= i %></th>
-          <td><%= part.name %></td>
+          <th scope="col">#</th>
+          <th class="text-left" scope="col">Part</th>
+          <th scope="col">Sold to</th>
+          <th scope="col">Price</th>
+
         </tr>
-          <% end %>
-      <% end %>
+      </thead>
+      <tbody>
+        <% i = 0 %>
+        <% @current_user.parts.each do |part| %>
+        <% if part.sold %>
+          <tr>
+              <% i = i + 1 %>
+            <th scope="row"><%= i %></th>
+            <td><%= part.name %></td>
+            <% part.trades.each do |trade| %>
+              <td><%= User.find(trade.user_id).first_name %> <%= User.find(trade.user_id).last_name %> </td>
+            <% end %>
+            <td><%= part.price %> EUR</td>
+            <% end %>
+          </tr>
 
-    </tbody>
-  </table>
+        <% end %>
 
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">Parts purchased</th>
-        <th colspan="2" scope="col">Bought from</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% j = 0 %>
-      <% @current_user.trades.each do |trade| %>
-      <tr>
-        <% j = j + 1 %>
-        <th scope="row"><%= j %></th>
-        <td><%= Part.find(trade.part_id).name %></td>
-          <td><%= User.find(Part.find(trade.part_id).user_id).first_name %></td>
-          <td><%= User.find(Part.find(trade.part_id).user_id).last_name %></td>
-      </tr>
-      <% end %>
+      </tbody>
+    </table>
+  </div>
 
-    </tbody>
-  </table>
+  <div>
+    <h3 class="text-center">Bought Parts</h3>
+    <table class="table table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th class="text-left" scope="col">Part</th>
+          <th scope="col">Bought from</th>
+          <th scope="col">Price</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% j = 0 %>
+        <% @current_user.trades.each do |trade| %>
+        <tr>
+          <% j = j + 1 %>
+          <th scope="row"><%= j %></th>
+          <td><%= Part.find(trade.part_id).name %></td>
+          <% first = User.find(Part.find(trade.part_id).user_id).first_name %>
+          <% last = User.find(Part.find(trade.part_id).user_id).last_name  %>
+          <td><%= first %> <%=last%></td>
+          <td><%= Part.find(trade.part_id).price %> EUR</td>
+        </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+  </div>
 </div>
 
