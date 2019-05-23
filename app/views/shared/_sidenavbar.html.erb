@@ -25,7 +25,11 @@
     </div>
 
     <div class="sidebar_image">
-      <%= cl_image_tag current_user.photo, class: "avatar-xl" %>
+      <% if current_user.photo? %>
+        <%= cl_image_tag current_user.photo, class: "avatar-xl"%>
+      <% else %>
+        <%= cl_image_tag "user_nixstg", class: "avatar-xl"%>
+      <% end %>
     </div>
 
       <p class="email-address">Logged in: <%= current_user.email %></p>
