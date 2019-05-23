@@ -12,10 +12,8 @@ class PartsController < ApplicationController
     @parts = policy_scope(Part).order(created_at: :desc)
     if params[:query].present?
       @parts = Part.global_search(params[:query])
-
-    else
-      @parts = policy_scope(Part).order(created_at: :desc)
     end
+
   end
 
   def new
@@ -47,17 +45,6 @@ class PartsController < ApplicationController
   def destroy
     @part.destroy
     redirect_to parts_path
-  end
-
-  def checkout
-    if @part.update(part_params)
-      redirect_to parts_path, notice: 'Part was succesfully bought and will be sent asap to your adress with a nice bill.'
-    else
-      render :new_checkout
-    end
-  end
-
-  def new_checkout
   end
 
   private

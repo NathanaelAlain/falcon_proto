@@ -63,9 +63,9 @@
                   <%= f.error_notification %>
                   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
                   <!-- as: :hidden -->
-                  <%= f.input :user_id, :input_html => { :value => current_user.id } %>
-                  <%= f.input :part_id, :input_html => { :value => @part.id }  %>
-                  <%= f.input :date, :input_html => { :value => DateTime.now.to_date }  %>
+                  <%= f.input :user_id, as: :hidden, :input_html => { :value => current_user.id } %>
+                  <%= f.input :part_id, as: :hidden, :input_html => { :value => @part.id }  %>
+                  <%= f.input :date, as: :hidden, :input_html => { :value => DateTime.now.to_date }  %>
                   <%= f.button :submit , class: "btn btn-primary btn-lg btn-block" %>
                 <% end -%>
             </div>
