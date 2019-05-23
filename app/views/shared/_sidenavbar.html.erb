@@ -1,0 +1,47 @@
+
+
+<div class="main">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
+    <i class="openbtn fas fa-bars"></i>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <% if user_signed_in? %>
+            <%= cl_image_tag "falcon_ijb5lg", width: 40, height: 40 %>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="sidenavbar" class="sidebar">
+
+    <div class="sidebar_link-toggle">
+      <a class="closebtn">&times;</a>
+    </div>
+
+    <div class="sidebar_image">
+      <%= cl_image_tag current_user.photo, class: "avatar-xl" %>
+    </div>
+
+      <p class="email-address">Logged in: <%= current_user.email %></p>
+
+      <%= link_to 'Home', dashboard_path, class: "sidebar_link" %>
+
+      <%= link_to 'Buy a part', parts_path, class: "sidebar_link" %>
+
+      <%= link_to 'Sell a part', new_part_path, class: "sidebar_link" %>
+
+      <%= link_to 'Trade history', history_path, class: "sidebar_link" %>
+
+      <%= link_to 'User profile', profile_path, class: "sidebar_link" %>
+
+      <%= link_to 'Logout',  destroy_user_session_path, method: :delete, class: "sidebar_link" %>
+
+</div>
+
+
