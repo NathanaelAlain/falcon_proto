@@ -1,21 +1,19 @@
 class TradesController < ApplicationController
-
   def history
     @trades = policy_scope(Trade)
   end
 
   def new
-    @user = User.find(params[:user_id])
     @trade = Trade.new
-    @parts = Part.all
+    @part = Part.find(params[:part_id])
+    authorize @trade
   end
 
   def create
-    @user = User.find(params[:user_id])
     @trade = Trade.new(trade_params)
-    @trade.user = @user
+    authorize @trade
     if @trade.save
-      redirect_to user_path(@user)
+      redirect_to history_path, notice: "Checkout is created"
     else
       render :new
     end
