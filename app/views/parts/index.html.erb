@@ -1,26 +1,33 @@
-<div class="container mt-2 sticky-top">
-    <%= simple_form_for :search, url: parts_path, method: :get do |f| %>
-      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "search a part" %>
-
-      <button name="button" type="submit" class="btn btn-flat btn-block">
-        <i class="fas fa-search"></i> Search
-      </button>
-  <% end %>
-
-</div>
-
-
-<div class="grid">
-  <% @parts.each do |part| %>
-    <div class="card-trip">
-    <%= cl_image_tag part.photo, crop: :fill %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= link_to part.name, part_path(part) %></h2>
-          <p><%= part.description %> </p>
+<div style="width: 90%">
+  <div class="container mt-2 fixed-top" style="width: 50%">
+    <%= form_tag parts_path, method: :get do %>
+      <div style="display: flex; height: 50px">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control form-styling", style: "height: 100%",
+          placeholder: "search a part"
+        %>
+        <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+          <i class="fas fa-search"></i>
+        <% end %>
         </div>
-        <h2 class="card-trip-pricing">€ <%= part.price %></h2>
-      </div>
+    <% end %>
+  </div>
+
+  <div style="width: 100%">
+    <div class="grid">
+      <% @parts.each do |part| %>
+        <div class="card-trip">
+        <%= cl_image_tag part.photo, crop: :fill %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to part.name, part_path(part) %></h2>
+              <p><%= part.description %> </p>
+            </div>
+            <h2 class="card-trip-pricing">€ <%= part.price %></h2>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
