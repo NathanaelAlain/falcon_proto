@@ -2,10 +2,6 @@
   margin: 15px;
 }
 
-.grid {
-
-}
-
 .profile-header {
   padding-top: 20px;
   padding-left: 100px;
@@ -20,4 +16,8 @@ p {
   background-color: #28518C;
   color: white;
   padding: 10px 20px;
+}
+
+.grid {
+  grid-gap: 80px;
 }

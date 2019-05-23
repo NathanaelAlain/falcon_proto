@@ -10,6 +10,12 @@ class PartsController < ApplicationController
 
   def index
     @parts = policy_scope(Part).order(created_at: :desc)
+    if params[:query].present?
+      @parts = Part.global_search(params[:query])
+
+    else
+      @parts = policy_scope(Part).order(created_at: :desc)
+    end
   end
 
   def new
