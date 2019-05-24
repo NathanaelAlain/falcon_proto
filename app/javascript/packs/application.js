@@ -1,5 +1,6 @@
 import "bootstrap";
 import { openNav, closeNav } from "./sidenav";
+require bootstrap-datepicker
 
 let sidenav = document.querySelector(".openbtn");
   sidenav.addEventListener('click', () => {
@@ -12,3 +13,5 @@ let sidenav_close = document.querySelector(".closebtn");
     event.preventDefault();
     closeNav();
   });
+
+$('.datepicker').datepicker();

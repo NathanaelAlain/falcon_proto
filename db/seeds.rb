@@ -1,3 +1,4 @@
+
 puts "Deleting the trades of the database..."
 Trade.destroy_all
 
@@ -9,6 +10,15 @@ User.destroy_all
 
 puts "Generating new users....."
 users_attributes = [
+{
+first_name: "#{Faker::Name.first_name }",
+last_name: "#{Faker::Name.last_name}",
+email: "#{Faker::Internet.email}",
+seller: Faker::Boolean.boolean(0.2),
+password: "123456",
+address: "#{Faker::Address.full_address}",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
+},
 {
 first_name: "Seller",
 last_name: "Test",
@@ -156,7 +166,7 @@ price: "1000"
 },
 {
 name: "Head Lamp Front Right",
-description: "530, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -172,6 +182,151 @@ sold: false,
 user_id: User.all.sample.id,
 price: "2400"
 },
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+},
+{
+name: "Head Lamp Front Right",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+part_type_id: "5G9947291B",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
+sold: true,
+user_id: User.all.sample.id,
+price: "700"
+}
+
 ]
 parts_attributes.each do |part_info|
   i = Part.new(part_info)
