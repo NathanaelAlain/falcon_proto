@@ -16,25 +16,25 @@
 
     <div class="user-info">
       <div>
-        <p><strong>First name: </strong><%= current_user.first_name %></p>
+        <p class="user-text"><strong>First name: </strong><%= current_user.first_name %></p>
       </div>
 
       <div>
-        <p><strong>Last name: </strong></strong><%= current_user.last_name %></p>
+        <p class="user-text"><strong>Last name: </strong></strong><%= current_user.last_name %></p>
       </div>
 
       <div>
-        <p><strong>Seller: </strong><%= current_user.seller %></p>
+        <p class="user-text"><strong>Seller: </strong><%= current_user.seller %></p>
       </div>
 
       <div>
-        <p><strong>Address: </strong><%= current_user.address %></p>
+        <p class="user-text"><strong>Address: </strong><%= current_user.address %></p>
       </div>
 
 
     </div>
     <div>
-      <%= link_to "Edit profile", edit_user_registration_path, class: "btn" %>
+      <%= link_to "Edit profile", edit_user_registration_path, class: "edit-btn" %>
     </div>
   </div>
 

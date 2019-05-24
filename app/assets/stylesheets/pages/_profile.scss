@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.user-text {
+  font-size: 24px !important;
+}
+
 .user-picture {
   margin-top: -40px;
 }
@@ -12,17 +16,14 @@
   text-align: center;
 }
 
-p {
-  font-size: 24px !important;
-}
-
-.btn {
+.edit-btn {
   border: 2px black;
   background-color: #28518C;
   color: white;
   padding: 30px 40px;
   margin-left: 40px;
-  margin-top: 50px;
+  margin-top: 40px;
+  font-size: 24px !important;
 }
 
 .grid {
