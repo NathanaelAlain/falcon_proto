@@ -1,6 +1,9 @@
 class TradesController < ApplicationController
   def history
-    @trades = policy_scope(Trade)
+    @trades = policy_scope(Trade).order(trade: :desc)
+    if params[:query].present?
+      @trades = Trade.global_search(params[:query])
+    end
   end
 
   def new

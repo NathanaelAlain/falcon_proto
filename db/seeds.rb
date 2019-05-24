@@ -11,15 +11,6 @@ User.destroy_all
 puts "Generating new users....."
 users_attributes = [
 {
-first_name: "#{Faker::Name.first_name }",
-last_name: "#{Faker::Name.last_name}",
-email: "#{Faker::Internet.email}",
-seller: Faker::Boolean.boolean(0.2),
-password: "123456",
-address: "#{Faker::Address.full_address}",
-photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
-},
-{
 first_name: "Seller",
 last_name: "Test",
 email: "seller@test.com",
@@ -82,6 +73,15 @@ password: "123456",
 address: "Penny Lane, Liverpool, UK",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
 },
+{
+first_name: "#{Faker::Name.first_name }",
+last_name: "#{Faker::Name.last_name}",
+email: "#{Faker::Internet.email}",
+seller: Faker::Boolean.boolean(0.2),
+password: "123456",
+address: "#{Faker::Address.full_address}",
+photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/user1_s2mh8z.jpg"
+}
 ]
 
 users_attributes.each do |user_info|
@@ -98,7 +98,7 @@ description: "Golf 7, 2017, like new, small scratches on the glass",
 part_type_id: "X",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529421/front-bumper.png",
 sold: false,
-user_id: User.all.sample.id,
+user_id: User.first.id,
 price: "100"
 },
 {
@@ -107,7 +107,7 @@ description: "Golf 7, 2017, like new, small scratches on the glass",
 part_type_id: "Y",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/s-l1600_un1znb.jpg",
 sold: false,
-user_id: User.all.sample.id,
+user_id: User.first.id,
 price: "200"
 },
 {
@@ -116,7 +116,7 @@ description: "Golf 6, 2015, good condition, works properly",
 part_type_id: "5Q0907561",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/s-l1600_1_bcwrur.jpg",
 sold: true,
-user_id: User.all.sample.id,
+user_id: User.second.id,
 price: "300"
 },
 {
@@ -125,7 +125,7 @@ description: "Golf 6, 2015, good condition, works properly",
 part_type_id: "5Q0907561",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/s-l1600_2_pmqf2o.jpg",
 sold: true,
-user_id: User.all.sample.id,
+user_id: User.first.id,
 price: "400"
 },
 {
@@ -134,7 +134,7 @@ description: "BMW 320, 2018, good condition, works properly",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/images_c7eymb.jpg",
 sold: false,
-user_id: User.all.sample.id,
+user_id: User.second.id,
 price: "500"
 },
 {
@@ -143,7 +143,7 @@ description: "Golf 7, 2017, good condition, works properly",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/s-l1600_3_mz67ik.jpg",
 sold: false,
-user_id: User.all.sample.id,
+user_id: User.second.id,
 price: "600"
 },
 {
@@ -152,7 +152,7 @@ description: "BMW 320, 2018, condition not tested, not tested",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/image_300583_big_aqa5ma.jpg",
 sold: true,
-user_id: User.all.sample.id,
+user_id: User.first.id,
 price: "1500"
 },
 {
@@ -323,7 +323,7 @@ description: "#{Faker::Vehicle.make_and_model}, 2008, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
-user_id: User.all.sample.id,
+user_id: User.first.id,
 price: "700"
 }
 
@@ -338,28 +338,38 @@ puts "Generating new trades....."
 trades_attributes = [
 {
 user_id: User.first.id,
-part_id: Part.second.id,
-date: "1.2.2019"
+part_id: Part.all.sample.id,
+date: Date.current
 },
 {
 user_id: User.first.id,
 part_id: Part.third.id,
-date: "2.3.2019"
+date: Date.current + 1
+},
+{
+user_id: User.first.id,
+part_id: Part.all.sample.id,
+date: Date.current + 2
+},
+{
+user_id: User.first.id,
+part_id: Part.all.sample.id,
+date: Date.current + 3
 },
 {
 user_id: User.second.id,
-part_id: Part.fourth.id,
-date: "3.4.2019"
-},
-{
-user_id: User.third.id,
-part_id: Part.fifth.id,
-date: "4.5.2019"
-},
-{
-user_id: User.fourth.id,
 part_id: Part.last.id,
-date: "5.6.2019"
+date: Date.current + 4
+},
+{
+user_id: User.second.id,
+part_id: Part.all.sample.id,
+date: Date.current + 4
+},
+{
+user_id: User.second.id,
+part_id: Part.all.sample.id,
+date: Date.current + 4
 },
 ]
 Trade.create!(trades_attributes)
