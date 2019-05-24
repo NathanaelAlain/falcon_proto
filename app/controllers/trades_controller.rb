@@ -1,6 +1,8 @@
 class TradesController < ApplicationController
   def history
     @trades = policy_scope(Trade)
+    @parts = Part.all
+    @trades = Trade.where(user_id: current_user.id)
   end
 
   def new

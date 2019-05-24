@@ -64,6 +64,8 @@
         <br>
         <li><%= @part.description %></li>
         <li>Part ID :<%= @part.part_type_id %></li>
+        <li>PARTID :<%= @part.id %></li>
+
         <li><%= cl_image_tag current_user.photo, class: "avatar" %>  Sell from :  <%= @user.first_name %>  </li>
         <li><%= @user.address %></li>
         <br>
