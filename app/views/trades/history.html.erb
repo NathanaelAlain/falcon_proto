@@ -17,12 +17,35 @@
 
 
   <div class="pt-3">
+    <h3 class="text-center">Your online Parts</h3>
+    <table class="table table-hover table-borderless">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th class="text-left" scope="col">Part</th>
+          <th scope="col">Uploaded</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% i = 0 %>
+        <% @parts.each do |part| %>
+          <% if part.user_id == current_user.id %>
+            <% if part.trades.count == 0 %>
+              <tr>
+                  <% i = i + 1 %>
+                <th scope="row"><%= i %></th>
+                <td><%= part.name %></td>
+              <td><%= part.created_at.strftime("%d-%m-%Y") %></td>
+              <td>€ <%= part.price %></td>
 
+              </tr>
+            <% end %>
+          <% end %>
+        <% end %>
 
-
-
-
-
+      </tbody>
+    </table>
 
     <h3 class="text-center">Sold Parts</h3>
     <table class="table table-hover table-borderless">
@@ -38,20 +61,19 @@
       </thead>
       <tbody>
         <% i = 0 %>
-        <% @current_user.trades.each do |trade| %>
-        <% if Part.find(trade.part_id).sold %>
-          <tr>
-              <% i = i + 1 %>
-            <th scope="row"><%= i %></th>
-            <td><%= Part.find(trade.part_id).name %></td>
-          <td><%= trade.date %></td>
-          <% first = User.find(Part.find(trade.part_id).user_id).first_name %>
-          <% last = User.find(Part.find(trade.part_id).user_id).last_name  %>
-          <td><%= first %> <%=last%></td>
-          <td><%= Part.find(trade.part_id).price %> EUR</td>
-          </tr>
+        <% @parts.each do |part| %>
+            <% if part.user_id == current_user.id && !part.trades.empty? %>
+              <tr>
+                  <% i = i + 1 %>
+                <th scope="row"><%= i %></th>
+                <td><%= part.name %></td>
+              <td><%= part.updated_at.strftime("%d-%m-%Y") %></td>
+              <td><%= part.trades.first.user.first_name %> <%= part.trades.first.user.last_name %></td>
+              <td>€ <%= part.price %></td>
+              </tr>
+            <% end %>
         <% end %>
-        <% end %>
+
 
       </tbody>
     </table>
@@ -81,7 +103,7 @@
           <% first = User.find(Part.find(trade.part_id).user_id).first_name %>
           <% last = User.find(Part.find(trade.part_id).user_id).last_name  %>
           <td><%= first %> <%=last%></td>
-          <td><%= Part.find(trade.part_id).price %> EUR</td>
+          <td>€ <%= Part.find(trade.part_id).price %></td>
         </tr>
         <% end %>
 

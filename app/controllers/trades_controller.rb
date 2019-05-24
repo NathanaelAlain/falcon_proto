@@ -1,5 +1,8 @@
 class TradesController < ApplicationController
   def history
+    @trades = policy_scope(Trade)
+    @parts = Part.all
+    @trades = Trade.where(user_id: current_user.id)
     @trades = policy_scope(Trade).order(trade: :desc)
     if params[:search] && params[:search][:Trades_from].present?
       date_from = params[:search][:Trades_from].split.first.split("-")
