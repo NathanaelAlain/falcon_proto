@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1 class="profile-header">Profile:</h1>
+  <h1 class="profile-header">Your profile:</h1>
 
   <div class="grid">
 
@@ -31,11 +31,11 @@
         <p><strong>Address: </strong><%= current_user.address %></p>
       </div>
 
-      <div>
-        <%= link_to "Edit profile", edit_user_registration_path, class: "btn" %>
-      </div>
-    </div>
 
+    </div>
+    <div>
+      <%= link_to "Edit profile", edit_user_registration_path, class: "btn" %>
+    </div>
   </div>
 
 </div>
