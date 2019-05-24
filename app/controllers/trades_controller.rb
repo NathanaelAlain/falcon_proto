@@ -3,6 +3,17 @@ class TradesController < ApplicationController
     @trades = policy_scope(Trade)
     @parts = Part.all
     @trades = Trade.where(user_id: current_user.id)
+    @trades = policy_scope(Trade).order(trade: :desc)
+    if params[:search] && params[:search][:Trades_from].present?
+      date_from = params[:search][:Trades_from].split.first.split("-")
+      starting_date = Date.new(date_from[0].to_i, date_from[1].to_i, date_from[2].to_i)
+
+      date_to = params[:search][:Trades_from].split.last.split("-")
+      ending_date = Date.new(date_to[0].to_i, date_to[1].to_i, date_to[2].to_i)
+
+      @trades = Trade.where(date: starting_date..ending_date)
+
+    end
   end
 
   def new

@@ -1,5 +1,11 @@
 p {
   font-size: 15px!important;
+  font-weight: normal;
+}
+.row > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 .part_sold {
   visibility: hidden;
@@ -42,14 +48,24 @@ p {
   color: #3b99e0;
 }
 
+.product {
+  height: 100%;
+}
+
+.product .row {
+  height: 100%;
+}
+
+.items {
+  height: 100%;
+}
+
 .shopping-cart .items{
   margin: auto;
 }
 
 .shopping-cart .items .product{
-  margin-bottom: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+
 }
 
 .shopping-cart .items .product .info{

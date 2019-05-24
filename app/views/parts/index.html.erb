@@ -8,14 +8,14 @@
           class: "form-control form-styling",
           placeholder: "Search for a part", style: "height: 40px;"
         %>
-        <%= button_tag(type: "submit", class: "btn btn-primary", style: "height: 40px;") do %>
+        <%= button_tag(type: "submit", class: "btn btn-primary search-btn", style: "height: 40px;") do %>
           <i class="fas fa-search"></i>
         <% end %>
         </div>
     <% end %>
   </div>
 
-<div class="grid">
+<div class="parts-grid">
   <% @parts.each do |part| %>
     <% if current_user.id != part.user_id %>
       <% if part.trades.count == 0 %>
