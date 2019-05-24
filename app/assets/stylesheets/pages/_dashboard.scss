@@ -1,7 +1,8 @@
 // Specific CSS for your home-page
 
 .welcome {
-  padding: 80px 80px 0px 80px;
+  padding-top: 30px;
+  margin-left: 40px;
 }
 
 
@@ -15,18 +16,15 @@
 .card-dashboard-info a {
   display: flex;
   justify-content: center;
-  padding: 50px;
+  padding: 80px;
   color: white;
-  font-size: 20px;
-
+  font-size: 22px;
 }
 
-
 .grid {
-  padding: 80px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  grid-gap: 50px;
+  grid-gap: 20px;
   align-items: stretch;
 }
 
