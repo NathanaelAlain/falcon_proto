@@ -1,8 +1,18 @@
 @import "../components/_card";
 
-.grid {
-  // padding: 50px;
+.parts-grid {
+  padding: 50px;
+  grid-gap: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  // align-items: stretch;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: stretch;
+}
+
+.search-btn {
+  display: flex;
+  font-size: 22px;
+  color: white;
+  background-color: #28518C;
+  padding-left: 50px;
+  padding-right: 50px;
 }
