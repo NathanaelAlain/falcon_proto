@@ -71,9 +71,11 @@
       </ul>
     </div>
 
-    <div class="col">
-      <%= link_to "Buy",  new_checkout_path, class: "btn btn-success btn-block" %>
-    <br>
+    <div class="actions">
+      <div class="col text-top">
+        <%= link_to "Buy",  new_part_trade_path(@part), class: "btn btn-success btn-block" %>
+      </div>
+      <br>
       <% if current_user.id == @part.user_id %>
         <%= link_to "edit part", edit_part_path, class: "btn btn-warning btn-block"  %>
         <%= link_to "delete part", part_path(@part), data: { confirm: "are you sure?" }, method: :delete, class: "btn btn-danger btn-block"%>
