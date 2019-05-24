@@ -6,26 +6,28 @@
         <tr>
           <th scope="col">#</th>
           <th class="text-left" scope="col">Part</th>
+          <th scope="col">Sold on</th>
           <th scope="col">Sold to</th>
           <th scope="col">Price</th>
-
+         <%= date_select :start_date, :startdate , :class => 'datepicker' %>
+         <%= date_select :end_date, :enddate , :class => 'datepicker' %>
         </tr>
       </thead>
       <tbody>
         <% i = 0 %>
-        <% @current_user.parts.each do |part| %>
-        <% if part.sold %>
+        <% @current_user.trades.each do |trade| %>
+        <% if Part.find(trade.part_id).sold %>
           <tr>
               <% i = i + 1 %>
             <th scope="row"><%= i %></th>
-            <td><%= part.name %></td>
-            <% part.trades.each do |trade| %>
-              <td><%= User.find(trade.user_id).first_name %> <%= User.find(trade.user_id).last_name %> </td>
-            <% end %>
-            <td><%= part.price %> EUR</td>
-            <% end %>
+            <td><%= Part.find(trade.part_id).name %></td>
+          <td><%= trade.date %></td>
+          <% first = User.find(Part.find(trade.part_id).user_id).first_name %>
+          <% last = User.find(Part.find(trade.part_id).user_id).last_name  %>
+          <td><%= first %> <%=last%></td>
+          <td><%= Part.find(trade.part_id).price %> EUR</td>
           </tr>
-
+        <% end %>
         <% end %>
 
       </tbody>
@@ -39,6 +41,7 @@
         <tr>
           <th scope="col">#</th>
           <th class="text-left" scope="col">Part</th>
+          <th scope="col">Bought on</th>
           <th scope="col">Bought from</th>
           <th scope="col">Price</th>
 
@@ -51,6 +54,7 @@
           <% j = j + 1 %>
           <th scope="row"><%= j %></th>
           <td><%= Part.find(trade.part_id).name %></td>
+          <td><%= trade.date %></td>
           <% first = User.find(Part.find(trade.part_id).user_id).first_name %>
           <% last = User.find(Part.find(trade.part_id).user_id).last_name  %>
           <td><%= first %> <%=last%></td>

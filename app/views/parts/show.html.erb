@@ -38,7 +38,7 @@
         <div class="carousel-inner" role="listbox">
          <div class="item active">
           <%# @parts.each do |part| %>
-          <%= cl_image_tag @part.photo, :width=>350, :fetch_format=>:auto, :crop=>"scale" %>
+          <%= cl_image_tag @part.photo, :width=>400, :height=>300, :fetch_format=>:auto, :crop=> :fill %>
           <%# end %>
           </div>
         </div>
@@ -81,7 +81,7 @@
         <%= link_to "delete part", part_path(@part), data: { confirm: "are you sure?" }, method: :delete, class: "btn btn-danger btn-block"%>
       <% end %>
       <br>
-      <%= link_to "all part", parts_path, class: "btn btn-primary btn-block"  %>
+      <%= link_to "Back to parts", parts_path, class: "btn btn-primary btn-block"  %>
     </div>
   </div>
 </div>
