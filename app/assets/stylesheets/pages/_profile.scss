@@ -1,23 +1,35 @@
 .user-info {
-  margin: 15px;
+  text-align: center;
+}
+
+.user-picture {
+  margin-top: -40px;
 }
 
 .profile-header {
-  padding-top: 20px;
-  padding-left: 100px;
+  padding-left: 60px;
+  padding-top: 40px;
+  text-align: center;
 }
 
 p {
-  font-size: 20px;
+  font-size: 24px !important;
 }
 
 .btn {
   border: 2px black;
   background-color: #28518C;
   color: white;
-  padding: 10px 20px;
-}
+  padding: 30px 40px;
+  margin-left: 40px;
+  margin-top: 50px;
 
 .grid {
-  grid-gap: 80px;
+  grid-gap: 60px;
+}
+
+#profile-container {
+  background-color: rgba(100,100,100,0.6);
+  margin-top: 80px;
+  border-radius: 10px;
 }
