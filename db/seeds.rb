@@ -112,7 +112,7 @@ price: "200"
 },
 {
 name: "ACC",
-description: "Golf 6, 2015, good contition, works properly",
+description: "Golf 6, 2015, good condition, works properly",
 part_type_id: "5Q0907561",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/s-l1600_1_bcwrur.jpg",
 sold: true,
@@ -121,7 +121,7 @@ price: "300"
 },
 {
 name: "Mirror R",
-description: "Golf 6, 2015, good contition, works properly",
+description: "Golf 6, 2015, good condition, works properly",
 part_type_id: "5Q0907561",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/s-l1600_2_pmqf2o.jpg",
 sold: true,
@@ -130,7 +130,7 @@ price: "400"
 },
 {
 name: "360 camera view",
-description: "BMW 320, 2018, good contition, works properly",
+description: "BMW 320, 2018, good condition, works properly",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/images_c7eymb.jpg",
 sold: false,
@@ -139,7 +139,7 @@ price: "500"
 },
 {
 name: "LED Pannel inside",
-description: "Golf 7, 2017, good contition, works properly",
+description: "Golf 7, 2017, good condition, works properly",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/s-l1600_3_mz67ik.jpg",
 sold: false,
@@ -148,7 +148,7 @@ price: "600"
 },
 {
 name: "Onborad ECU",
-description: "BMW 320, 2018, contition not tested, not tested",
+description: "BMW 320, 2018, condition not tested, not tested",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/image_300583_big_aqa5ma.jpg",
 sold: true,
@@ -157,7 +157,7 @@ price: "1500"
 },
 {
 name: "Motor management",
-description: "BMW X3, 2016, contition not tested, not tested",
+description: "BMW X3, 2016, condition not tested, not tested",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529420/MotorManagement.jpg",
 sold: false,
@@ -166,7 +166,7 @@ price: "1000"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -175,7 +175,7 @@ price: "700"
 },
 {
 name: "Laser distance detection",
-description: "Audi A8, 2015, good contition, works properly",
+description: "Audi A8, 2015, good condition, works properly",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529725/images_1_hckujw.jpg",
 sold: false,
@@ -184,7 +184,7 @@ price: "2400"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2017, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -193,7 +193,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2016, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -202,7 +202,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2016, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -211,7 +211,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2012, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -220,7 +220,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -229,7 +229,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -238,7 +238,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2014, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -247,7 +247,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2002, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -256,7 +256,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2003, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -265,7 +265,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2011, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -274,7 +274,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2015, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -283,7 +283,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2012, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -292,7 +292,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2013, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -301,7 +301,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2011, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -310,7 +310,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2004, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
@@ -319,7 +319,7 @@ price: "700"
 },
 {
 name: "Head Lamp Front Right",
-description: "#{Faker::Vehicle.make_and_model}, 2013, normal contition, works",
+description: "#{Faker::Vehicle.make_and_model}, 2008, normal condition, works",
 part_type_id: "5G9947291B",
 photo: "https://res.cloudinary.com/dbimnldt2/image/upload/v1558529728/image_296363_big_kp7xui.jpg",
 sold: true,
