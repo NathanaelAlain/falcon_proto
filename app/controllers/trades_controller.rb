@@ -1,8 +1,15 @@
 class TradesController < ApplicationController
   def history
     @trades = policy_scope(Trade).order(trade: :desc)
-    if params[:query].present?
-      @trades = Trade.global_search(params[:query])
+    if params[:search] && params[:search][:Trades_from].present?
+      date_from = params[:search][:Trades_from].split.first.split("-")
+      starting_date = Date.new(date_from[0].to_i, date_from[1].to_i, date_from[2].to_i)
+
+      date_to = params[:search][:Trades_from].split.last.split("-")
+      ending_date = Date.new(date_to[0].to_i, date_to[1].to_i, date_to[2].to_i)
+
+      @trades = Trade.where(date: starting_date..ending_date)
+
     end
   end
 
