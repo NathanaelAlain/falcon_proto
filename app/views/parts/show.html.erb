@@ -64,7 +64,7 @@
         <br>
         <li><%= @part.description %></li>
         <li>Part ID : <%= @part.part_type_id %></li>
-        <li><%= cl_image_tag current_user.photo, class: "avatar" %>  Sell from:  <%= @user.first_name %>  </li>
+        <li><%= cl_image_tag @user.photo, class: "avatar" %>  Sell from:  <%= @user.first_name %>  </li>
         <li><%= @user.address %></li>
         <br>
         <li class="font-weight-bold list-unstyled"><span class="bg-secondary text-white p-1">Price : <%= @part.price %> €</span></li>
