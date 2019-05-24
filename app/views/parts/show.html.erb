@@ -73,7 +73,7 @@
 
     <div class="actions">
       <div class="col text-top">
-        <%= link_to "Buy",  new_checkout_path, class: "btn btn-success btn-block" %>
+        <%= link_to "Buy",  new_part_trade_path(@part), class: "btn btn-success btn-block" %>
       </div>
       <br>
       <% if current_user.id == @part.user_id %>
