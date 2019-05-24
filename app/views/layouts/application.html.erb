@@ -15,9 +15,11 @@
   <body id="main-content">
 
     <% if signed_in? %>
+    <%= render 'shared/navbar' %>
     <%= render 'shared/sidenavbar' %>
     <% end  %>
     <%= render 'shared/flashes' %>
+
     <%= yield %>
 
     <%= javascript_include_tag 'application' %>

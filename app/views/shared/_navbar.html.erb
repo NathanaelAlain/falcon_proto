@@ -1,0 +1,17 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
+    <i class="openbtn fas fa-bars"></i>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <% if user_signed_in? %>
+          <%= link_to dashboard_path do %>
+            <%= cl_image_tag "falcon_ijb5lg", width: 40, height: 40 %>
+          <% end %>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>

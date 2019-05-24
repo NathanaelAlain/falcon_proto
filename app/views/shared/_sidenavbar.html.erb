@@ -1,24 +1,5 @@
-
-
-<div class="main">
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
-    <i class="openbtn fas fa-bars"></i>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <% if user_signed_in? %>
-            <%= cl_image_tag "falcon_ijb5lg", width: 40, height: 40 %>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <div id="sidenavbar" class="sidebar">
+  <!-- style="transition:0.3s all ease-in-out;" -->
 
     <div class="sidebar_link-toggle">
       <a class="closebtn">&times;</a>
@@ -31,8 +12,9 @@
         <%= cl_image_tag "user_nixstg", class: "avatar-xl"%>
       <% end %>
     </div>
-
+    <br>
       <p class="email-address">Logged in: <%= current_user.email %></p>
+      <br>
 
       <%= link_to 'Home', dashboard_path, class: "sidebar_link" %>
 
