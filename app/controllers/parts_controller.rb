@@ -1,5 +1,5 @@
 class PartsController < ApplicationController
-  before_action :set_part, only: [:show, :edit, :update, :destroy, :new_checkout, :checkout]
+  before_action :set_part, only: [:show, :edit, :update, :destroy]
 
   def show
     @trade = Trade.new
@@ -13,7 +13,6 @@ class PartsController < ApplicationController
     if params[:query].present?
       @parts = Part.global_search(params[:query])
     end
-
   end
 
   def new
